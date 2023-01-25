@@ -4,9 +4,12 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(express.json());
+app.use(cors());
 
-const corsOptions = { origin: ["https://users-ibkmt.herokuapp.com", "https://users-ibkmt.vercel.app"], credentials: true }
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
 const db = require("./models");
 
