@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://users-ibkmt.vercel.app/", credentials: true }))
 
 const db = require("./models");
 
