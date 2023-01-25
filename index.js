@@ -5,8 +5,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(cors({
-    origin: '*',
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+    origin: ["https://users-ibkmt.herokuapp.com/", 'https://users-ibkmt.herokuapp.com/']
 }));
 
 const db = require("./models");
